@@ -2,55 +2,33 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mapa Violeta Tour</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fans Tour</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
 </head>
 <body>
-  <h1>¿Desde dónde viaja la gente?</h1>
-  <div id="map"></div>
+  <div class="background-pattern"></div>
+  <main>
+    <header>
+      <h1>Fans en Tour</h1>
+      <p class="subtitle">Viajes y voces que cruzan fronteras</p>
+    </header>
 
-  <button id="btn-add-travel">Añadir viaje</button>
+    <section class="button-section">
+      <a href="./maps/index.html" class="main-button">Mapa de Viajes</a>
+      <a href="./opinions/index.html" class="main-button">Opiniones de Fans</a>
+    </section>
 
-  <!-- Ventana modal para añadir viaje -->
-  <div id="modal" class="hidden">
-    <div id="modal-content">
-      <button type="button" id="btn-close-modal" class="close-button" aria-label="Cerrar modal">×</button>
-      <h2>Añadir viaje</h2>
-      <form id="form-add-travel">
-        <label>
-          ¿Desde dónde viajas? 
-          <select id="select-country-or-province" name="location-type" required>
-            <option value="" disabled selected>Selecciona</option>
-            <option value="province">Otra provincia (España)</option>
-            <option value="country">Otro país (Internacional)</option>
-          </select>
-        </label>
+    <section class="description">
+      <p>
+        Este proyecto recopila los recorridos de fans de todo el mundo que siguen a Violeta en su gira 2025.
+        Explora el mapa para ver los trayectos y comparte tu opinión como fan.
+      </p>
+    </section>
 
-        <label id="label-location" style="display:none;">
-          Origen:
-          <select id="select-location" name="origin" required>
-            <!-- Se carga dinámicamente -->
-          </select>
-        </label>
-
-        <label>
-          ¿A qué concierto asistes?:
-          <select id="select-destination" name="destination" required>
-            <!-- Se carga dinámicamente desde teatros -->
-          </select>
-        </label>
-
-        <button type="submit">Enviar viaje</button>
-      </form>
-    </div>
-  </div>
-
-
-  <script
-    src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-  <script src="script.js"></script>
+    <footer>
+      <p>Hecho por fans, para fans — Proyecto colaborativo no oficial.</p>
+    </footer>
+  </main>
 </body>
 </html>
