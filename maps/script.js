@@ -322,7 +322,7 @@ async function showTravelLines(destinationCity) {
       polyline.on("mouseover", (e) => {
         polyline.setStyle({ color: "#b71c1c", weight: 4, opacity: 1 });
         const distKm = (map.distance(originCoords, destCoords) / 1000).toFixed(1);
-        polyline.bindTooltip(`Distancia: ${distKm} km`).openTooltip(e.latlng);
+        polyline.bindTooltip(`Distancia aprox: ${distKm} km`).openTooltip(e.latlng);
       });
       polyline.on("mouseout", () => {
         polyline.setStyle({ color: "#d32f2f", weight: 2, opacity: 0.7 });
