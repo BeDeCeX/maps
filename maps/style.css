@@ -1,40 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff;
-  color: #000;
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #111;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.background-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/logo-repeat.png');
+  background-repeat: repeat;
+  background-size: 100px auto;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-h1 {
-  margin: 20px 0;
-  color: #d32f2f; /* rojo */
+h1.title {
+  font-size: 2rem;
+  margin: 1.5rem 0 1rem 0;
+  text-align: center;
+  color: #111;
 }
 
 #map {
   width: 90vw;
-  height: 80vh;
-  border: 2px solid #d32f2f;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
-  margin-bottom: 20px;
+  height: 75vh;
+  border-radius: 12px;
+  border: 2px solid black;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  margin-bottom: 1rem;
 }
 
-button {
-  background: #d32f2f;
+/* Top bar */
+.top-bar {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 10;
+}
+
+.main-button {
+  background-color: black;
   color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  text-decoration: none;
   border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background: #b71c1c;
+.main-button:hover {
+  background-color: #b30000;
 }
 
 /* Modal */
@@ -58,8 +93,8 @@ button:hover {
 #modal-content {
   position: relative;
   background: white;
-  padding: 30px 30px 20px 30px;
-  border-radius: 10px;
+  padding: 30px;
+  border-radius: 12px;
   max-width: 420px;
   width: 90%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -68,25 +103,9 @@ button:hover {
 #modal-content h2 {
   margin-top: 0;
   margin-bottom: 20px;
-  color: #d32f2f;
   font-size: 1.5rem;
+  color: #111;
   text-align: left;
-}
-
-/* Botón de cerrar (X) */
-.close-button {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: #333;
-  cursor: pointer;
-}
-
-.close-button:hover {
-  color: #d32f2f;
 }
 
 label {
@@ -96,18 +115,19 @@ label {
   color: #222;
 }
 
-select, button[type="submit"] {
+select,
+button[type="submit"] {
   width: 100%;
   padding: 10px;
   margin-top: 6px;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   font-family: inherit;
 }
 
 button[type="submit"] {
-  background-color: #d32f2f;
+  background-color: black;
   color: white;
   font-weight: bold;
   border: none;
@@ -116,38 +136,53 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #b71c1c;
+  background-color: #b30000;
 }
 
-/* Popup estilo similar al modal */
+/* Botón de cerrar */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #b30000;
+}
+
+/* Leaflet popup */
 .leaflet-popup-content-wrapper {
   border-radius: 10px !important;
-  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.5) !important;
-  border: 2px solid #d32f2f !important;
-  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+  border: 2px solid black !important;
+  font-family: 'Inter', sans-serif;
   color: #222;
 }
 
 .leaflet-popup-content {
-  margin: 10px 10px 10px 10px !important;
-  line-height: 1.3;
+  margin: 10px !important;
+  line-height: 1.4;
 }
 
-/* Botón dentro del popup */
 .btn-popup-ticket {
-  background-color: #d32f2f;
+  background-color: black;
   border: none;
   color: white;
   padding: 6px 12px;
-  border-radius: 5px;
+  border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
   font-size: 0.9rem;
-  margin-top: 4px;
+  margin-top: 6px;
   user-select: none;
   transition: background-color 0.3s ease;
 }
 
 .btn-popup-ticket:hover {
-  background-color: #b71c1c;
+  background-color: #b30000;
 }

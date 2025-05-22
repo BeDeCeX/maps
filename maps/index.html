@@ -8,10 +8,17 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
 </head>
 <body>
-  <h1>¿Desde dónde viaja la gente?</h1>
-  <div id="map"></div>
+  <div class="background-pattern"></div>
 
-  <button id="btn-add-travel">Añadir viaje</button>
+  <header class="top-bar">
+    <a href="../index.html" class="main-button top-left">← Inicio</a>
+    <button id="btn-add-travel" class="main-button top-right">Añadir viaje</button>
+  </header>
+
+  <main>
+    <h1 class="title">¿Desde dónde viaja la gente?</h1>
+    <div id="map"></div>
+  </main>
 
   <!-- Ventana modal para añadir viaje -->
   <div id="modal" class="hidden">
@@ -47,9 +54,7 @@
     </div>
   </div>
 
-
-  <script
-    src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="script.js"></script>
 </body>
