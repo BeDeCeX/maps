@@ -2,32 +2,39 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mapa Violeta Tour</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="stylemap.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
 </head>
 <body>
   <div class="background-pattern"></div>
-
-  <header class="top-bar">
-    <a href="../index.html" class="main-button top-left">← Inicio</a>
-    <button id="btn-add-travel" class="main-button top-right">Añadir viaje</button>
-  </header>
-
   <main>
-    <h1 class="title">¿Desde dónde viaja la gente?</h1>
-    <div id="map"></div>
+    <header class="map-header">
+      <div class="header-row">
+        <a href="../index.html" class="main-button">I a inicio</a>
+        <h1 class="header-title">¿Desde dónde viaja la gente?</h1>
+        <button id="btn-add-travel" class="main-button">Añadir mi viaje</button>
+      </div>
+      <p class="subtitle">Mapeamos los viajes de los fans para el tour de Violeta</p>
+    </header>
+
+    <div id="map" class="map-container"></div>
+
+    <footer>
+      <p>Hecho por fans, para fans — Proyecto colaborativo no oficial.</p>
+      <p>Última actualización: 20 de mayo 2025.</p>
+    </footer>
   </main>
 
-  <!-- Ventana modal para añadir viaje -->
+  <!-- Modal para añadir viaje -->
   <div id="modal" class="hidden">
     <div id="modal-content">
       <button type="button" id="btn-close-modal" class="close-button" aria-label="Cerrar modal">×</button>
       <h2>Añadir viaje</h2>
       <form id="form-add-travel">
         <label>
-          ¿Desde dónde viajas? 
+          ¿Desde dónde viajas?
           <select id="select-country-or-province" name="location-type" required>
             <option value="" disabled selected>Selecciona</option>
             <option value="province">Otra provincia (España)</option>
@@ -37,16 +44,12 @@
 
         <label id="label-location" style="display:none;">
           Origen:
-          <select id="select-location" name="origin" required>
-            <!-- Se carga dinámicamente -->
-          </select>
+          <select id="select-location" name="origin" required></select>
         </label>
 
         <label>
           ¿A qué concierto asistes?:
-          <select id="select-destination" name="destination" required>
-            <!-- Se carga dinámicamente desde teatros -->
-          </select>
+          <select id="select-destination" name="destination" required></select>
         </label>
 
         <button type="submit">Enviar viaje</button>
